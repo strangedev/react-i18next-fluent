@@ -137,7 +137,7 @@ import { Trans } from '@nhummel/react-i18next-fluent';
 
 ### Writing translations
 
-After writing the Placeholder, you're good to go. Your application can will
+After writing the Placeholder, you're good to go. Your application will
 always fall back to the placeholder, so you can take your time while writing
 translation resources.
 
