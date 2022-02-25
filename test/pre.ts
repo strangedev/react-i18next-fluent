@@ -1,6 +1,6 @@
 import { JSDOM } from 'jsdom';
 
-export default function () {
+export default function (): void {
   const jsdom = new JSDOM(`
     <html>
       <head></head>
@@ -17,4 +17,4 @@ export default function () {
     ...Object.getOwnPropertyDescriptors(window),
     ...Object.getOwnPropertyDescriptors(global)
   });
-};
+}

@@ -1,5 +1,5 @@
-import { ClosingTagDoesNotMatchOpeningTag, NotAllTagsWereClosed, TagIsIncomplete, TagIsNotKnown, TagNameIsInvalid } from './errors';
 import { Tag } from './types/Tag';
+import { ClosingTagDoesNotMatchOpeningTag, NotAllTagsWereClosed, TagIsIncomplete, TagIsNotKnown, TagNameIsInvalid } from './errors';
 import React, { ReactNode } from 'react';
 
 const renderTreeFromText = ({
@@ -30,7 +30,7 @@ const renderTreeFromText = ({
     }
 
     if (i + 1 === text.length) {
-      throw new TagIsIncomplete({ data: { position: i } });
+      throw new TagIsIncomplete({ data: { position: i }});
     }
 
     const isClosingTag = text[i + 1] === '/';
@@ -67,7 +67,7 @@ const renderTreeFromText = ({
 
       const tagName = tag.slice(1, -1);
 
-      if (!/^[a-zA-Z]\w*$/gm.test(tagName)) {
+      if (!/^[A-Za-z]\w*$/gum.test(tagName)) {
         throw new TagNameIsInvalid({
           data: {
             tag: tagName,
@@ -110,7 +110,7 @@ const renderTreeFromText = ({
     const tagName = tag.slice(2, -1);
     const closedTag = openTags.shift();
 
-    if (!/^[a-zA-Z]\w*$/gm.test(tagName)) {
+    if (!/^[A-Za-z]\w*$/gum.test(tagName)) {
       throw new TagNameIsInvalid({
         data: {
           tag: tagName,
@@ -136,6 +136,7 @@ const renderTreeFromText = ({
 
     const Component = components[tagName];
 
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (!Component) {
       throw new TagIsNotKnown({
         data: {
@@ -154,7 +155,7 @@ const renderTreeFromText = ({
   }
 
   if (openTags.length > 1) {
-    throw new NotAllTagsWereClosed({ data: { openTags } });
+    throw new NotAllTagsWereClosed({ data: { openTags }});
   }
 
   const root = openTags.shift();

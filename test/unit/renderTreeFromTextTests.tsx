@@ -1,8 +1,8 @@
-import { render } from '@testing-library/react';
 import { assert } from 'assertthat';
-import React, { Fragment, FunctionComponent, ReactElement } from 'react';
-import { ClosingTagDoesNotMatchOpeningTag, NotAllTagsWereClosed, TagIsIncomplete, TagIsNotKnown, TagNameIsInvalid } from '../../lib/errors';
+import { render } from '@testing-library/react';
 import { renderTreeFromText } from '../../lib/renderTreeFromText';
+import { ClosingTagDoesNotMatchOpeningTag, NotAllTagsWereClosed, TagIsIncomplete, TagIsNotKnown, TagNameIsInvalid } from '../../lib/errors';
+import React, { Fragment, FunctionComponent, ReactElement } from 'react';
 
 suite('renderTreeFromText', (): void => {
   suite('successful cases', (): void => {
@@ -22,7 +22,7 @@ suite('renderTreeFromText', (): void => {
       const text = 'Text with <Bold>tags</Bold>, some <Bold>are even <Italic>nested</Italic></Bold>!';
 
       const Bold: FunctionComponent = ({ children }): ReactElement => <b>{ children }</b>;
-      const Italic: FunctionComponent = ({ children }): ReactElement => <i>{ children }</i>
+      const Italic: FunctionComponent = ({ children }): ReactElement => <i>{ children }</i>;
 
       const components = { Bold, Italic };
 
@@ -34,8 +34,9 @@ suite('renderTreeFromText', (): void => {
       const expected = container.innerHTML;
 
       ({ container } = render(
+        // eslint-disable-next-line react/jsx-no-useless-fragment
         <Fragment>
-          {...renderTreeFromText({ text, components })}
+          { ...renderTreeFromText({ text, components }) }
         </Fragment>
       ));
       const actual = container.innerHTML;
@@ -43,12 +44,12 @@ suite('renderTreeFromText', (): void => {
       assert.that(actual).is.equalTo(expected);
     });
   });
-  suite('error cases', () => {
+  suite('error cases', (): void => {
     test('throws TagIsIncomplete when the opening bracket is followed by no more characters.', async (): Promise<void> => {
       const text = 'This is invalid <';
       const components = {};
 
-      assert.that(() => {
+      assert.that((): void => {
         renderTreeFromText({ text, components });
       }).is.throwing(new TagIsIncomplete().message);
     });
@@ -56,7 +57,7 @@ suite('renderTreeFromText', (): void => {
       const text = 'This is <invalid';
       const components = {};
 
-      assert.that(() => {
+      assert.that((): void => {
         renderTreeFromText({ text, components });
       }).is.throwing(new TagIsIncomplete().message);
     });
@@ -64,7 +65,7 @@ suite('renderTreeFromText', (): void => {
       const text = 'This is <invalid> input </invalid';
       const components = {};
 
-      assert.that(() => {
+      assert.that((): void => {
         renderTreeFromText({ text, components });
       }).is.throwing(new TagIsIncomplete().message);
     });
@@ -72,7 +73,7 @@ suite('renderTreeFromText', (): void => {
       const text = 'This is an invalid <3tag> :/ </3tag>';
       const components = {};
 
-      assert.that(() => {
+      assert.that((): void => {
         renderTreeFromText({ text, components });
       }).is.throwing(new TagNameIsInvalid().message);
     });
@@ -80,7 +81,7 @@ suite('renderTreeFromText', (): void => {
       const text = 'This is invalid <tag<> :/ </tag<>';
       const components = {};
 
-      assert.that(() => {
+      assert.that((): void => {
         renderTreeFromText({ text, components });
       }).is.throwing(new TagNameIsInvalid().message);
     });
@@ -88,7 +89,7 @@ suite('renderTreeFromText', (): void => {
       const text = 'This is invalid </tag>';
       const components = {};
 
-      assert.that(() => {
+      assert.that((): void => {
         renderTreeFromText({ text, components });
       }).is.throwing(new ClosingTagDoesNotMatchOpeningTag().message);
     });
@@ -96,7 +97,7 @@ suite('renderTreeFromText', (): void => {
       const text = 'This is <tag><p> invalid </tag></p>';
       const components = {};
 
-      assert.that(() => {
+      assert.that((): void => {
         renderTreeFromText({ text, components });
       }).is.throwing(new ClosingTagDoesNotMatchOpeningTag().message);
     });
@@ -104,7 +105,7 @@ suite('renderTreeFromText', (): void => {
       const text = 'This is <invalid>';
       const components = {};
 
-      assert.that(() => {
+      assert.that((): void => {
         renderTreeFromText({ text, components });
       }).is.throwing(new NotAllTagsWereClosed().message);
     });
@@ -112,7 +113,7 @@ suite('renderTreeFromText', (): void => {
       const text = 'This is <valid> text </valid>';
       const components = {};
 
-      assert.that(() => {
+      assert.that((): void => {
         renderTreeFromText({ text, components });
       }).is.throwing(new TagIsNotKnown().message);
     });
