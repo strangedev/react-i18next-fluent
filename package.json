@@ -1,6 +1,6 @@
 {
   "name": "@nhummel/react-i18next-fluent",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A translation component for react-i18next with an API for humans.",
   "contributors": [
     {
