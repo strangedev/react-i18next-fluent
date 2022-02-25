@@ -1,0 +1,17 @@
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: daily
+    open-pull-requests-limit: 10
+    assignees:
+      - strangedev
+    labels:
+      - Dependencies
+    versioning-strategy: increase
+    allow:
+      - dependency-type: direct
+    commit-message:
+      prefix: fix
+      prefix-development: chore
