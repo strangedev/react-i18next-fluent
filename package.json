@@ -40,5 +40,8 @@
     "react",
     "react-i18next"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "license": "MIT"
 }
