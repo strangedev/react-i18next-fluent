@@ -3,11 +3,18 @@
     "target": "ES6",
     "lib": [ "DOM", "ES2020" ],
     "jsx": "react",
+    "declaration": true,
     "module": "commonjs",
     "outDir": "build",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "skipLibCheck": true
-  }
+  },
+  "include": [
+    "lib/**/*.ts",
+    "lib/**/*.tsx",
+    "test/**/*.ts",
+    "test/**/*.tsx"
+  ]
 }
