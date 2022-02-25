@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/strangedev/react-i18next-fluent/compare/1.0.1...1.0.2) (2022-02-25)
+
+
+### Bug Fixes
+
+* build ([1bc7cb0](https://github.com/strangedev/react-i18next-fluent/commit/1bc7cb076ec6f8b119106ca0ee02614fe90d47d8))
+
 ## [1.0.1](https://github.com/strangedev/react-i18next-fluent/compare/1.0.0...1.0.1) (2022-02-25)
 
 
