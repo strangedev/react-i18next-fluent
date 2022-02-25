@@ -21,10 +21,10 @@ jobs:
           npm install
       - name: Run roboter
         run: |
-          npm run roboter
+          npx roboter
       - name: Compile TypeScript
         run: |
-          npm run roboter -- build
+          npx roboter -- build
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN_ADMIN }}
