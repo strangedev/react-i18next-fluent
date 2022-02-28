@@ -2,6 +2,14 @@
 
 A translation component for `react-i18next` with an API for humans.
 
+## Status
+
+| Category         | Status                                                                                                      |
+| ---------------- | ----------------------------------------------------------------------------------------------------------- |
+| Version          | [![npm](https://img.shields.io/npm/v/@nhummel/react-i18next-fluent)](https://www.npmjs.com/package/@nhummel/react-i18next-fluent)     |
+| Build            | ![GitHub Actions](https://github.com/strangedev/react-i18next-fluent/workflows/Release/badge.svg?branch=main) |
+| License          | ![GitHub](https://img.shields.io/github/license/strangedev/react-i18next-fluent)                              |
+
 ## Introduction
 
 Translating react apps with `i18next` can be challenging.
