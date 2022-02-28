@@ -1,3 +1,10 @@
+## [1.0.4](https://github.com/strangedev/react-i18next-fluent/compare/1.0.3...1.0.4) (2022-02-28)
+
+
+### Bug Fixes
+
+* use peer deps ([#3](https://github.com/strangedev/react-i18next-fluent/issues/3)) ([01a19dd](https://github.com/strangedev/react-i18next-fluent/commit/01a19ddffd09189f66ae3efc2d18fd332a0f869c))
+
 ## [1.0.3](https://github.com/strangedev/react-i18next-fluent/compare/1.0.2...1.0.3) (2022-02-25)
 
 
