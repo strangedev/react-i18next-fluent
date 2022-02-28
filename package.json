@@ -13,9 +13,7 @@
   "types": "build/lib/index.d.ts",
   "type": "commonjs",
   "dependencies": {
-    "defekt": "8.2.0",
-    "react": "17.0.2",
-    "react-i18next": "11.15.5"
+    "defekt": "8.2.0"
   },
   "devDependencies": {
     "@testing-library/react": "12.1.3",
@@ -25,6 +23,10 @@
     "jsdom": "19.0.0",
     "roboter": "12.7.0",
     "semantic-release-configuration": "2.0.7"
+  },
+  "peerDependencies": {
+    "react": "17.x",
+    "react-i18next": "11.x"
   },
   "scripts": {
     "test": "npx roboter test"
