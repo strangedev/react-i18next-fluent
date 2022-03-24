@@ -1,3 +1,10 @@
+## [1.0.5](https://github.com/strangedev/react-i18next-fluent/compare/1.0.4...1.0.5) (2022-03-24)
+
+
+### Bug Fixes
+
+* bump defekt from 8.2.0 to 9.0.0 ([#11](https://github.com/strangedev/react-i18next-fluent/issues/11)) ([6c2a9aa](https://github.com/strangedev/react-i18next-fluent/commit/6c2a9aae213ddc70ce23d2fecc1780d4f0798473))
+
 ## [1.0.4](https://github.com/strangedev/react-i18next-fluent/compare/1.0.3...1.0.4) (2022-02-28)
 
 
