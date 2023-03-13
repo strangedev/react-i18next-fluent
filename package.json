@@ -17,10 +17,10 @@
   },
   "devDependencies": {
     "@testing-library/react": "12.1.4",
-    "@types/jsdom": "20.0.1",
+    "@types/jsdom": "21.1.0",
     "@types/react": "17.0.43",
     "assertthat": "6.5.2",
-    "jsdom": "20.0.2",
+    "jsdom": "21.1.1",
     "roboter": "13.2.1",
     "semantic-release-configuration": "2.0.7"
   },
